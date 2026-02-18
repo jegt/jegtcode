@@ -1,0 +1,9 @@
+{
+  "name": "jegtcode",
+  "version": "1.1.0",
+  "description": "Lightweight 3-mode workflow system: discuss, plan, build. Modes control what Claude can do with hard enforcement via hooks.",
+  "author": {
+    "name": "jegt"
+  },
+  "license": "MIT"
+}

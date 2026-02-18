@@ -1,0 +1,13 @@
+{
+  "name": "jegtcode",
+  "owner": {
+    "name": "jegt"
+  },
+  "plugins": [
+    {
+      "name": "jegtcode",
+      "source": "./",
+      "description": "Lightweight 3-mode workflow system: discuss, plan, build."
+    }
+  ]
+}
