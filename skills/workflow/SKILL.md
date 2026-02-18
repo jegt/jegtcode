@@ -1,9 +1,9 @@
 ---
 name: workflow
 description: |
-  Lightweight 3-mode workflow system: discuss, plan, build.
-  Modes control what Claude can do. Discuss and plan modes block code edits
-  (enforced by hook). Build mode allows everything. Modes are switched via
+  Lightweight 4-mode workflow system: discuss, plan, build, verify.
+  Modes control what Claude can do. Discuss, plan, and verify modes block code
+  edits (enforced by hook). Build mode allows everything. Modes are switched via
   slash commands only. Always active when a project has .claude/workflow/state.json.
 author: jegt
 version: 1.1.0
@@ -12,8 +12,9 @@ date: 2026-02-18
 
 # Workflow Mode System
 
-You operate in one of three modes: **discuss**, **plan**, or **build**. Modes are
-controlled by the user via `/discuss`, `/create-plan`, and `/build` commands.
+You operate in one of four modes: **discuss**, **plan**, **build**, or **verify**.
+Modes are controlled by the user via `/discuss`, `/create-plan`, `/build`, and
+`/verify` commands.
 
 **This skill is always active. Check mode before every response.**
 
@@ -63,6 +64,16 @@ If the file exists, extract `mode` and follow the rules for that mode strictly.
   3. If still failing, question your assumptions and rethink
   4. After 3 failures, escalate to the user with what you tried
 - **Do not**: Deviate significantly from the plan without discussing first
+
+### verify mode
+- **Purpose**: Check that the implementation matches the plan and findings
+- **Can read code**: Yes — explore everything
+- **Can edit project files**: No — the hook will block you
+- **Can edit workflow files**: Yes — `findings.md`, `plan.md`, `progress.md`
+- **Key behavior**: Systematically verify requirements coverage, plan completion,
+  decision adherence, and verification criteria. Append a verification report to
+  `progress.md` with specific evidence (files, functions, line numbers).
+- **Do not**: Fix code. Report issues and suggest `/build` to fix them.
 
 ## File Structures
 
