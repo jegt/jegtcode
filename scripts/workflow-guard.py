@@ -38,7 +38,7 @@ def main():
         os.path.join(cwd, "progress.md"),
     ]
 
-    if file_path in allowed or ".claude/workflow" in file_path:
+    if file_path in allowed or ".claude/" in file_path:
         sys.exit(0)
 
     # Block with reason
