@@ -45,5 +45,5 @@ PYTHON
 
 echo "Installed jegtcode workflow plugin (symlinked)"
 echo "  skill:    $CLAUDE_DIR/skills/workflow -> $PLUGIN_DIR/skills/workflow"
-echo "  commands: discuss, create-plan, build"
+echo "  commands: discuss, create-plan, build, verify, mode"
 echo "  hook:     workflow-guard.py"
