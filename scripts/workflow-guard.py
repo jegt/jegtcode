@@ -8,8 +8,8 @@ def main():
     hook_input = json.loads(sys.stdin.read())
     tool = hook_input.get("tool_name", "")
 
-    # Only gate file-editing tools
-    if tool not in ("Edit", "Write", "NotebookEdit"):
+    # Gate file-editing tools and built-in plan mode
+    if tool not in ("Edit", "Write", "NotebookEdit", "EnterPlanMode"):
         sys.exit(0)
 
     cwd = hook_input.get("cwd", os.getcwd())
@@ -23,6 +23,19 @@ def main():
         with open(state_path) as f:
             mode = json.load(f).get("mode", "build")
     except (json.JSONDecodeError, IOError):
+        sys.exit(0)
+
+    # Always block built-in plan mode when workflow is active
+    if tool == "EnterPlanMode":
+        print(json.dumps({
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason":
+                    "Blocked: built-in plan mode is disabled when the workflow "
+                    "system is active. Use /create-plan instead."
+            }
+        }))
         sys.exit(0)
 
     # Build mode allows all edits
