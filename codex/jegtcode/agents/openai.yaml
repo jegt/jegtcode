@@ -1,0 +1,4 @@
+interface:
+  display_name: "jegtcode"
+  short_description: "jegtcode discuss-plan-build-verify workflow"
+  default_prompt: "Use $jegtcode to switch to discuss mode and capture findings before coding."
