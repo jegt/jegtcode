@@ -11,7 +11,8 @@ allowed-tools:
   - WebFetch
 ---
 
-Switch to **discussion mode**. Follow these steps exactly:
+Switch to **discussion mode**. The mode state file is already set by a hook —
+do NOT write to `.claude/workflow/state.json` yourself. Follow these steps exactly:
 
 1. If `findings.md` exists in the project root, read it and internalize the context.
    Briefly acknowledge what's already been captured.

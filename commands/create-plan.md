@@ -11,7 +11,8 @@ allowed-tools:
   - WebFetch
 ---
 
-Switch to **planning mode**. Follow these steps exactly:
+Switch to **planning mode**. The mode state file is already set by a hook —
+do NOT write to `.claude/workflow/state.json` yourself. Follow these steps exactly:
 
 1. Read `findings.md` from the project root if it exists — this is your discussion
    context. Reference these findings in your plan.

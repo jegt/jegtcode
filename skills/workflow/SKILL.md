@@ -20,11 +20,12 @@ Modes are controlled by the user via `/discuss`, `/create-plan`, `/build`, and
 
 ## Mode Check
 
-At the start of every response, silently read `.claude/workflow/state.json` from
-the project root. If the file doesn't exist, this workflow is not active — operate
-normally and ignore all rules below.
+A hook manages `.claude/workflow/state.json` automatically — **do NOT read or write
+this file yourself.** The hook sets the mode before your turn starts and injects a
+reminder with the current mode into every prompt.
 
-If the file exists, extract `mode` and follow the rules for that mode strictly.
+If no mode reminder appears in the prompt, this workflow is not active — operate
+normally and ignore all rules below.
 
 ## Mode Rules
 

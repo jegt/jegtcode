@@ -11,7 +11,8 @@ allowed-tools:
   - WebFetch
 ---
 
-Switch to **verify mode**. Follow these steps exactly:
+Switch to **verify mode**. The mode state file is already set by a hook —
+do NOT write to `.claude/workflow/state.json` yourself. Follow these steps exactly:
 
 1. Read `plan.md` — this is what should have been built.
 2. Read `findings.md` — this has the requirements and decisions that informed the plan.

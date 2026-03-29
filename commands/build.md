@@ -12,7 +12,8 @@ allowed-tools:
   - WebFetch
 ---
 
-Switch to **build mode**. Follow these steps exactly:
+Switch to **build mode**. The mode state file is already set by a hook —
+do NOT write to `.claude/workflow/state.json` yourself. Follow these steps exactly:
 
 1. Read `plan.md` from the project root — this is your implementation guide.
    If no plan exists, tell the user and suggest `/create-plan` first.
