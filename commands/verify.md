@@ -13,11 +13,9 @@ allowed-tools:
 
 Switch to **verify mode**. Follow these steps exactly:
 
-1. Create `.claude/workflow/` directory in the project root if it doesn't exist.
-2. Write `.claude/workflow/state.json` with contents: `{"mode": "verify"}`
-3. Read `plan.md` — this is what should have been built.
-4. Read `findings.md` — this has the requirements and decisions that informed the plan.
-5. Read `progress.md` — this is what was actually done.
+1. Read `plan.md` — this is what should have been built.
+2. Read `findings.md` — this has the requirements and decisions that informed the plan.
+3. Read `progress.md` — this is what was actually done.
 
 **Verify mode rules (follow strictly):**
 

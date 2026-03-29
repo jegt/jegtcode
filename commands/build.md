@@ -14,11 +14,9 @@ allowed-tools:
 
 Switch to **build mode**. Follow these steps exactly:
 
-1. Create `.claude/workflow/` directory in the project root if it doesn't exist.
-2. Write `.claude/workflow/state.json` with contents: `{"mode": "build"}`
-3. Read `plan.md` from the project root — this is your implementation guide.
+1. Read `plan.md` from the project root — this is your implementation guide.
    If no plan exists, tell the user and suggest `/create-plan` first.
-4. Read `progress.md` from the project root if it exists — pick up where you
+2. Read `progress.md` from the project root if it exists — pick up where you
    left off. If it doesn't exist, create it with the plan's steps as pending items.
 
 **Build mode rules (follow strictly):**

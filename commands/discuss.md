@@ -13,11 +13,9 @@ allowed-tools:
 
 Switch to **discussion mode**. Follow these steps exactly:
 
-1. Create `.claude/workflow/` directory in the project root if it doesn't exist.
-2. Write `.claude/workflow/state.json` with contents: `{"mode": "discuss"}`
-3. If `findings.md` exists in the project root, read it and internalize the context.
+1. If `findings.md` exists in the project root, read it and internalize the context.
    Briefly acknowledge what's already been captured.
-4. If `findings.md` doesn't exist, that's fine — you'll create it when there's
+2. If `findings.md` doesn't exist, that's fine — you'll create it when there's
    something worth capturing.
 
 **Discussion mode rules (follow strictly):**

@@ -13,11 +13,9 @@ allowed-tools:
 
 Switch to **planning mode**. Follow these steps exactly:
 
-1. Create `.claude/workflow/` directory in the project root if it doesn't exist.
-2. Write `.claude/workflow/state.json` with contents: `{"mode": "plan"}`
-3. Read `findings.md` from the project root if it exists — this is your discussion
+1. Read `findings.md` from the project root if it exists — this is your discussion
    context. Reference these findings in your plan.
-4. Read `plan.md` from the project root if it exists — you may be refining an
+2. Read `plan.md` from the project root if it exists — you may be refining an
    existing plan rather than creating a new one.
 
 **Planning mode rules (follow strictly):**
